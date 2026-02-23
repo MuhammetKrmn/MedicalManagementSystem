@@ -16,13 +16,13 @@ public class PatientController {
     @FXML
     void handleSave() {
         try {
-            // 1. Alanları al ve boşlukları temizle
+
             String pId = patientId.getText().trim();
             String name = nameField.getText().trim();
             String address = addressField.getText().trim();
             String phone = phoneField.getText().trim();
 
-            // 2. Kısıtlama Kontrolleri (Constraints)
+
             if (pId.isEmpty() || name.isEmpty() || address.isEmpty() || phone.isEmpty()) {
                 showAlert("Hata", "Lütfen tüm alanları doldurun!");
                 return;
@@ -38,7 +38,7 @@ public class PatientController {
                 return;
             }
 
-            // 3. Nesne Oluşturma ve Kayıt
+
             Patient p = new Patient(Integer.parseInt(pId), name, address, phone);
 
             int result = crud.insertPatient(p);
@@ -55,7 +55,6 @@ public class PatientController {
             e.printStackTrace();
             showAlert("Hata", "Bir sorun oluştu: " + e.getMessage());
         }
-        // DİKKAT: Metodun sonunda başka hiçbir kod (delete vs.) olmamalı!
     }
     @FXML
     void handleGet() {
@@ -66,7 +65,7 @@ public class PatientController {
                 addressField.setText(p.get().getAddress());
                 phoneField.setText(p.get().getPhone());
 
-                // ID alanını yazılamaz yapıyoruz ki güncelleme yaparken değişmesin
+
                 patientId.setEditable(false);
                 patientId.setStyle("-fx-background-color: #e0e0e0;"); // Görsel geri bildirim
             } else {
@@ -125,7 +124,7 @@ public class PatientController {
             if (crud.deletePatientById(id) > 0) {
                 showAlert("Başarılı", "Hasta başarıyla silindi!");
 
-                // Burası kritik: Silme bitince kutuyu eski haline döndürür
+
                 handleClear();
 
             } else {
@@ -138,8 +137,8 @@ public class PatientController {
     @FXML
     void handleClear() {
         patientId.clear();
-        patientId.setEditable(true); // Tekrar yazılabilir yap
-        patientId.setStyle(null);    // Rengi sıfırla
+        patientId.setEditable(true);
+        patientId.setStyle(null);
         nameField.clear();
         addressField.clear();
         phoneField.clear();

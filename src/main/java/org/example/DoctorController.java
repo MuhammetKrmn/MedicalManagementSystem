@@ -56,10 +56,10 @@ public class DoctorController {
             showAlert("Hata", "Lütfen tüm alanları doğru doldurduğunuzdan emin olun.");
         }
     }
-    // UPDATE Butonu için (Scene Builder'daki #handleUpdate)
+
     @FXML
     void handleUpdate() {
-        // 1. ADIM: Boşluk Kontrolü (Aynı Save'deki gibi)
+
         if (doctorId.getText().trim().isEmpty() ||
                 nameField.getText().trim().isEmpty() ||
                 cliniqueField.getText().trim().isEmpty()) {
@@ -69,15 +69,14 @@ public class DoctorController {
         }
 
         try {
-            // 2. ADIM: Güncellenecek verileri nesneye alıyoruz
+
             Doctor d = new Doctor(
                     Integer.parseInt(doctorId.getText()),
                     nameField.getText(),
                     cliniqueField.getText()
             );
 
-            // 3. ADIM: CRUD üzerinden güncelleme işlemini çağırıyoruz
-            // (Bu metodun DoctorCrudOperations içinde tanımlı olduğunu varsayıyoruz)
+
             if (crud.updateDoctor(d) > 0) {
                 showAlert("Başarılı", "Doktor bilgileri güncellendi!");
             } else {
@@ -90,15 +89,15 @@ public class DoctorController {
         }
     }
 
-    // DELETE Butonu için (Scene Builder'daki #handleDelete)
+
     @FXML
     void handleDelete() {
         try {
             int id = Integer.parseInt(doctorId.getText());
-            // Crud sınıfındaki silme metodunu çağırıyoruz
+
             if (crud.deleteDoctorById(id) > 0) {
                 showAlert("Başarılı", "Doktor sistemden silindi!");
-                // Silindikten sonra kutuları temizleyelim knk
+
                 doctorId.clear();
                 nameField.clear();
                 cliniqueField.clear();

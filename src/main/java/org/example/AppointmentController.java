@@ -57,7 +57,7 @@ public class AppointmentController {
             e.printStackTrace();
             showAlert("Hata", "Bir sorun oluştu: " + e.getMessage());
         }
-        // BURADAKİ HATALI SİLME KODUNU KALDIRDIK KRAL!
+
     }
 
     @FXML
@@ -66,7 +66,7 @@ public class AppointmentController {
             int id = Integer.parseInt(appId.getText());
             if (crud.deleteAppointment(id) > 0) {
                 showAlert("Başarılı", "Randevu silindi!");
-                handleClear(); // Silme işleminden sonra kutuları boşaltır
+                handleClear();
             } else {
                 showAlert("Hata", "Randevu bulunamadı veya silinemedi!");
             }

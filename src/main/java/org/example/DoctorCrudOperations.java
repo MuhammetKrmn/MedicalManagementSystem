@@ -5,7 +5,7 @@ import java.util.Optional;
 
 public class DoctorCrudOperations {
 
-    // MEVCUT GET METODUN (Kalsın)
+
     public Optional<Doctor> getDoctorById(int id) {
         Doctor doctor = null;
         String query = "SELECT * FROM doctors WHERE id = ?";
@@ -20,7 +20,7 @@ public class DoctorCrudOperations {
         return Optional.ofNullable(doctor);
     }
 
-    // MEVCUT SAVE METODUN (Kalsın)
+
     public int insertDoctor(Doctor d) {
         String query = "INSERT INTO doctors (id, name, clinique) VALUES (?, ?, ?)";
         try (Connection conn = DatabaseConnection.getConnection();
@@ -32,9 +32,8 @@ public class DoctorCrudOperations {
         } catch (SQLException e) { e.printStackTrace(); return -1; }
     }
 
-    // --- BURADAN AŞAĞISINI EKLE (Kırmızıları Söndürecek Kısım) ---
 
-    // 3. UPDATE METODU
+
     public int updateDoctor(Doctor d) {
         String query = "UPDATE doctors SET name = ?, clinique = ? WHERE id = ?";
         try (Connection conn = DatabaseConnection.getConnection();
@@ -51,7 +50,7 @@ public class DoctorCrudOperations {
         }
     }
 
-    // 4. DELETE METODU
+
     public int deleteDoctorById(int id) {
         String query = "DELETE FROM doctors WHERE id = ?";
         try (Connection conn = DatabaseConnection.getConnection();

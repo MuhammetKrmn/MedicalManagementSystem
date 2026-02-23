@@ -15,7 +15,7 @@ public class Appointment {
         this.time = time;
     }
 
-    // Bu Getter'lar olmazsa CRUD sınıfın hata verir knk
+
     public int getId() { return id; }
     public int getDoctorId() { return doctorId; }
     public int getPatientId() { return patientId; }
