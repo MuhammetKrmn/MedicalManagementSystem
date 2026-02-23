@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="350.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AppointmentController">
+    <children>
+        <Label layoutX="30.0" layoutY="30.0" text="APPOINTMENT ID:" />
+        <TextField fx:id="appId" layoutX="170.0" layoutY="26.0" />
+
+        <Label layoutX="30.0" layoutY="70.0" text="DOCTOR ID:" />
+        <TextField fx:id="doctorId" layoutX="170.0" layoutY="66.0" />
+
+        <Label layoutX="30.0" layoutY="110.0" text="PATIENT ID:" />
+        <TextField fx:id="patientId" layoutX="170.0" layoutY="106.0" />
+
+        <Label layoutX="30.0" layoutY="150.0" text="DATE (YYYY-MM-DD):" />
+        <TextField fx:id="dateField" layoutX="170.0" layoutY="146.0" />
+
+        <Label layoutX="30.0" layoutY="190.0" text="TIME (HH:MM):" />
+        <TextField fx:id="timeField" layoutX="170.0" layoutY="186.0" />
+
+        <HBox layoutX="150.0" layoutY="250.0" spacing="10.0">
+            <children>
+                <Button onAction="#handleSave" text="SAVE" />
+                <Button onAction="#handleGet" text="GET" />
+                <Button onAction="#handleDelete" text="DELETE" />
+                <Button onAction="#handleClear" text="CLEAR" /> </children>
+        </HBox>
+    </children>
+</AnchorPane>

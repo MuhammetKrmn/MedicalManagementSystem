@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TabPane prefHeight="500.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="Hastalar (Patients)">
+                    <content>
+                        <fx:include source="patient_view.fxml" />
+                    </content>
+                </Tab>
+                <Tab text="Doktorlar (Doctors)">
+                    <content>
+                        <fx:include source="doctor_view.fxml" />
+                    </content>
+                </Tab>
+                <Tab text="Randevular (Appointments)">
+                    <content>
+                        <fx:include source="appointment_view.fxml" />
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

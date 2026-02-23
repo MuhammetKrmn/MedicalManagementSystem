@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.DoctorController"
+            prefHeight="250.0" prefWidth="450.0"> <children>
+    <Label layoutX="26.0" layoutY="20.0" text="DOCTOR ID:" />
+    <TextField fx:id="doctorId" layoutX="110.0" layoutY="16.0" />
+
+    <Label layoutX="26.0" layoutY="60.0" text="NAME:" />
+    <TextField fx:id="nameField" layoutX="110.0" layoutY="56.0" />
+
+    <Label layoutX="26.0" layoutY="100.0" text="CLINIQUE:" />
+    <TextField fx:id="cliniqueField" layoutX="110.0" layoutY="96.0" />
+
+    <Button layoutX="270.0" layoutY="16.0" onAction="#handleGet" text="GET" />
+
+    <HBox layoutX="34.0" layoutY="150.0" spacing="10.0">
+        <children>
+            <Button onAction="#handleSave" text="SAVE" />
+            <Button onAction="#handleUpdate" text="UPDATE" />
+            <Button onAction="#handleDelete" text="DELETE" />
+        </children>
+    </HBox>
+</children>
+</AnchorPane>
